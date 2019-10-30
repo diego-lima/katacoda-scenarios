@@ -16,7 +16,7 @@
       "text": "finish.md"
     },
     "assets": {
-      "Dockerfile": [
+      "client": [
         {
           "file": "Dockerfile",
           "target": "~/"
