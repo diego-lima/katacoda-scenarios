@@ -1,7 +1,7 @@
-This is your first step.
+O primeiro passo é baixar e rodar uma imagem Docker com o cliente Geth instalado.
 
-## Task
+## Imagem docker
 
-This is an _example_ of creating a scenario and running a **command**
+Primeiro vamos **construir** a imagem:
 
-`echo 'Hello World'`{{execute}}
+`docker build . -t cliente_geth`{{execute}}
