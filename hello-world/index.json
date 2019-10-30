@@ -1,6 +1,6 @@
 {
   "title": "Rede privada Ethereum",
-  "description": "2Montando uma rede privada com vários nós",
+  "description": "3Montando uma rede privada com vários nós",
   "difficulty": "beginner",
   "time": "2 minutes",
   "details": {
@@ -19,13 +19,13 @@
       "client": [
         {
           "file": "Dockerfile",
-          "target": "~/"
+          "target": "/home/scrapbook/"
         }
       ],
       "host01": [
         {
           "file": "testeasset",
-          "target": "~/"
+          "target": "/home/scrapbook/"
         }
       ]
     }
