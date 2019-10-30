@@ -1,6 +1,6 @@
 {
-  "title": "Hello World Scenario",
-  "description": "Your First Scenario",
+  "title": "Rede privada Ethereum",
+  "description": "Montando uma rede privada com vários nós",
   "difficulty": "beginner",
   "time": "2 minutes",
   "details": {
