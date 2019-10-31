@@ -4,7 +4,7 @@ O primeiro passo é baixar e rodar uma imagem Docker com o cliente Geth instalad
 
 Primeiramente, vamos só descobrir qual nosso ip dentro da rede:
 
-`export extip=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1 -d'/') && echo "seu ip: $extip"`{{execute}}
+`export extip=$(hostname -I | cut -f1 -d ' ') && echo "seu ip: $extip"`{{execute}}
 
  Verifique se o seu IP foi detectado corretamente analisando o output do comando abaixo:
 
