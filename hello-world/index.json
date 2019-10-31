@@ -1,6 +1,6 @@
 {
   "title": "Rede privada Ethereum",
-  "description": "11Montando uma rede privada com vários nós",
+  "description": "12Montando uma rede privada com vários nós",
   "difficulty": "Intermediate",
   "time": "15 minutes",
   "details": {
@@ -15,11 +15,11 @@
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Passo 3 - Rodando a imagem com o geth",
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Passo 4 - Conectando o segundo nó",
         "text": "step4.md"
       }
     ],

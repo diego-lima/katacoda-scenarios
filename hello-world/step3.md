@@ -14,9 +14,6 @@ Agora, dentro da sessão interativa, podemos rodar vários comandos.
 
 Digite `admin.nodeInfo.enode`{{execute}} para encontrar o endereço do nó dentro da rede.
 
-Isso vai mostrar qual endereço os outros nós podem utilizar para se conectar ao seu.
+Isso vai mostrar qual endereço os outros nós podem utilizar para se conectar ao seu. **Anote esse resultado em algum lugar, pois será necessário na hora de conectar um nó com outro.**
 
-## Descobrindo o endereço do nó (outra forma)
-
-`export meu_nodekey=$(docker container exec -it no_1 sh -c "cat /root/workshop_blockchain_navi/rede/geth/nodekey")`{{execute}}
-`echo "enode://$meu_nodekey@$meu_ip:30303"`{{execute}}
+Aperte `Ctrl + D` para sair da sessão interativa do cliente.
