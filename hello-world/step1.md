@@ -1,14 +1,10 @@
 O primeiro passo é baixar e rodar uma imagem Docker com o cliente Geth instalado.
 
-## Alguns utilitários
+## Preparando
 
-Primeiramente, vamos só instalar alguns utilitários:
+Primeiramente, vamos só descobrir qual nosso ip dentro da rede:
 
-`apt-get update && apt-get install wget`{{execute}}
-
-Agora, vamos descobrir qual é o nosso IP dentro da rede:
-
-`export meu_ip=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1 -d'/') && echo "seu ip: $meu_ip"`{{execute}}
+`export extip=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1 -d'/') && echo "seu ip: $extip"`{{execute}}
 
  Verifique se o seu IP foi detectado corretamente analisando o output do comando abaixo:
 
@@ -16,34 +12,25 @@ Agora, vamos descobrir qual é o nosso IP dentro da rede:
 
 ## Imagem docker
 
-Primeiro vamos **construir** a imagem:
+Vamos rodar uma imagem pré-montada que foi preparada para facilitar a instalação de um nó ethereum:
 
-`wget https://raw.githubusercontent.com/diego-lima/workshop_blockchain_navi/master/Dockerfile`{{execute}}
+`docker run --name meu_no_ethereum -e "extip" -d diblacksmith/no_ethereum_exemplo`{{execute}}
 
-`docker build . -t cliente_geth`{{execute}}
+Com isso, colocamos o nó para executar em segundo plano. Para verificar isso, liste os containers em execução:
 
-Agora, **rodamos** a imagem:
+`docker ps`{{execute}}
 
-`docker run -it -p 30303:30303 -p 8546:8546 -p 8545:8545 \
-    --name no_1 cliente_geth \
-    --datadir /root/workshop_blockchain_navi/rede \
-    --networkid=621 --nat extip:$meu_ip --syncmode full  \
-    --rpc --rpcaddr 0.0.0.0 --rpccorsdomain “*” \
-    --wsport 8546 --wsorigins "*" --wsaddr 0.0.0.0 \
-    console`{{execute}}
+Para se conectar ao nosso cliente, vamos iniciar uma sessão interativa:
 
-Digite `admin.nodeInfo.enode`{{execute}}.
+`docker container exec -it meu_no_ethereum sh -c 'geth attach $datadir/geth.ipc'`{{execute}}
 
-Isso vai mostrar qual o endereço do seu nó.
+Agora, dentro da sessão interativa, podemos rodar vários comandos.
+
+Digite `admin.nodeInfo.enode`{{execute}} para encontrar o endereço do nó dentro da rede.
+
+Isso vai mostrar qual endereço os outros nós podem utilizar para se conectar ao seu.
 
 ## Descobrindo o endereço do nó (outra forma)
 
-Para que possamos nos conectar com outros nós, precisamos saber o endereço do nosso próprio.
-
-Saia do nó, pressionando `Ctrl + (P + Q)`.
-
 `export meu_nodekey=$(docker container exec -it no_1 sh -c "cat /root/workshop_blockchain_navi/rede/geth/nodekey")`{{execute}}
-
 `echo "enode://$meu_nodekey@$meu_ip:30303"`{{execute}}
-
-Copie esse resultado.
