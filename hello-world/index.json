@@ -1,13 +1,14 @@
 {
   "title": "Rede privada Ethereum",
-  "description": "10Montando uma rede privada com vários nós",
+  "description": "11Montando uma rede privada com vários nós",
   "difficulty": "Intermediate",
   "time": "15 minutes",
   "details": {
     "steps": [
       {
         "title": "Passo 1 - Observando configurações de rede",
-        "text": "step1.md"
+        "text": "step1.md",
+        "courseData": "remove_docker.sh"
       },
       {
         "title": "Passo 2 - Instalando o Docker",
@@ -28,6 +29,15 @@
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "remove_docker.sh",
+          "target": "/root/",
+          "chmod": "+x"
+        }
+      ]
     }
   },
   "environment": {
