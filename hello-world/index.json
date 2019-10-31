@@ -1,13 +1,27 @@
 {
   "title": "Rede privada Ethereum",
-  "description": "7Montando uma rede privada com vários nós",
+  "description": "8Montando uma rede privada com vários nós",
   "difficulty": "beginner",
   "time": "2 minutes",
   "details": {
-    "steps": [{
-      "title": "Passo 1 - Container Docker",
-      "text": "step1.md"
-    }],
+    "steps": [
+      {
+        "title": "Passo 1 - Observando configurações de rede",
+        "text": "step1.md"
+      },
+      {
+        "title": "Passo 2 - Instalando o Docker",
+        "text": "step2.md"
+      },
+      {
+        "title": "Step 3",
+        "text": "step3.md"
+      },
+      {
+        "title": "Step 4",
+        "text": "step4.md"
+      }
+    ],
     "intro": {
       "text": "intro.md",
       "credits": ""
