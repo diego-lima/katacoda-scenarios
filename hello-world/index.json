@@ -1,8 +1,8 @@
 {
   "title": "Rede privada Ethereum",
-  "description": "8Montando uma rede privada com vários nós",
-  "difficulty": "beginner",
-  "time": "2 minutes",
+  "description": "9Montando uma rede privada com vários nós",
+  "difficulty": "Intermediate",
+  "time": "15 minutes",
   "details": {
     "steps": [
       {
@@ -31,9 +31,9 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal"
+    "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "ubuntu"
+    "imageid": "centos"
   }
 }
