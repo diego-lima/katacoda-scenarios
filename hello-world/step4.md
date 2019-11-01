@@ -38,7 +38,11 @@ telnet: Unable to connect to remote host: No route to host`
 
 Nesse caso, será necessário realizar mais investigação para conseguir desbloquear essa conexão entre as máquinas. No Windows, pode ser que seja necessário criar uma regra no firewall para permitir que a conexão aconteça.
 
-No nosso caso, vamos simular esse teste usando o `extip` declarado anteriormente, e a porta padrão de operação do cliente ethereum `30303`: `telnet $extip 30303`{{execute}}
+No nosso caso, vamos simular esse teste usando o IP do segundo nó e a porta padrão de operação do cliente ethereum `30303`:
+
+`export ip_segundo_no=$(docker inspect segundo_no | grep '"IPAddress"' | tail -n1 | awk '{print $2}' | cut -f2 -d'"') && echo ip do segundo no: $ip_segundo_no`{{execute}}
+
+`telnet $ip_segundo_no 30303`{{execute}}
 
 ## Conectando os nós
 
@@ -47,10 +51,12 @@ Para efetivamente conectar os dois clientes, vamos precisar copiar o endereço e
 Caso não tenha copiado ainda, inicie uma sessão interativa no primeiro nó e obtenha o enode da seguinte forma:
 
 `docker container exec -it meu_no_ethereum sh -c 'geth attach $datadir/geth.ipc'`{{execute}}
+
 `admin.nodeInfo.enode`{{execute}}
 
 Com o enode do primeiro nó copiado, vamos iniciar uma sessão interativa no segundo nó e conectá-lo com o primeiro:
 `docker container exec -it segundo_no sh -c 'geth attach $datadir/geth.ipc'`{{execute}}
+
 `admin.addPeer("<AQUI O ENODE DO PRIMEIRO NÓ>")`{{execute}}
 
 Uma chamada correta desse comando se parece com o seguinte:
