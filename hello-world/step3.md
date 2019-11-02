@@ -1,6 +1,6 @@
 Vamos rodar uma imagem pré-montada que foi preparada para facilitar a instalação de um nó ethereum:
 
-`docker run --name meu_no_ethereum -e "extip" -d diblacksmith/no_ethereum_exemplo`{{execute}}
+`docker run --name meu_no_ethereum -d diblacksmith/no_ethereum_exemplo`{{execute}}
 
 Com isso, colocamos o nó para executar em segundo plano. Para verificar isso, liste os containers em execução:
 

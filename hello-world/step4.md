@@ -8,7 +8,7 @@ Se esses passos fossem executados em uma segunda máquina (na mesma rede), eles 
 
 Para instanciar um segundo nó, basta repetir o comando executado anteriormente, mudando apenas o nome do container que será criado:
 
-`docker run --name segundo_no -e "extip" -d diblacksmith/no_ethereum_exemplo`{{execute}}
+`docker run --name segundo_no -d diblacksmith/no_ethereum_exemplo`{{execute}}
 
 Para verificar que, agora, temos os dois nós rodando:
 
