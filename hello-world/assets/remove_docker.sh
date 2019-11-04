@@ -1,1 +1,1 @@
-apt-get remove docker docker-engine docker.io -y
+#apt-get remove docker docker-engine docker.io -y

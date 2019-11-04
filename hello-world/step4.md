@@ -6,9 +6,9 @@ Se esses passos fossem executados em uma segunda máquina (na mesma rede), eles 
 
 ## Rodando o segundo nó
 
-Para instanciar um segundo nó, basta repetir o comando executado anteriormente, mudando apenas o nome do container que será criado:
+Para instanciar um segundo nó, basta repetir o comando executado anteriormente, mudando apenas o nome do container que será criado. No segundo terminal, rode:
 
-`docker run --name segundo_no -d diblacksmith/no_ethereum_exemplo`{{execute}}
+`docker run --name segundo_no -e "identity=segundo_no" -d diblacksmith/no_ethereum_exemplo`{{execute}}
 
 Para verificar que, agora, temos os dois nós rodando:
 
@@ -46,9 +46,9 @@ No nosso caso, vamos simular esse teste usando o IP do segundo nó e a porta pad
 
 ## Conectando os nós
 
-Para efetivamente conectar os dois clientes, vamos precisar copiar o endereço enode que obtivemos numa seção passada.
+Para efetivamente conectar os dois clientes, vamos precisar obter o endereço enode.
 
-Caso não tenha copiado ainda, inicie uma sessão interativa no primeiro nó e obtenha o enode da seguinte forma:
+Inicie uma sessão interativa no primeiro nó e obtenha o enode da seguinte forma:
 
 `docker container exec -it meu_no_ethereum sh -c 'geth attach $datadir/geth.ipc'`{{execute}}
 
@@ -66,3 +66,11 @@ Uma chamada correta desse comando se parece com o seguinte:
 Para verificar que a conexão foi realizada com sucesso, podemos obter a contagem de "peers" conectados (que deve ser superior a 0):
 
 `net.peerCount`{{execute}}
+
+Para verificar algumas informações sobre os nós conectados:
+
+`admin.peers`{execute}
+
+Observe que o nome do nó está de acordo:
+
+`admin.peers[0].name`
