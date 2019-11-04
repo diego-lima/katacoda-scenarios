@@ -17,3 +17,15 @@ Digite `admin.nodeInfo.enode`{{execute}} para encontrar o endereço do nó dentr
 Isso vai mostrar qual endereço os outros nós podem utilizar para se conectar ao seu.
 
 Aperte `Ctrl + D` para sair da sessão interativa do cliente.
+
+## O que aconteceu?
+
+Como utilizamos uma imagem já pronta, muitos detalhes acabaram fugindo da nossa atenção.
+
+Porém, a verdade é que muita coisa já foi previamente decidida. Algumas delas:
+- A versão do cliente ethereum é o _Geth_ v1.8.27
+- O algoritmo de consenso é o _Proof of Authority_
+- Quatro contas já foram previamente criadas
+- As quatro contas já foram previamente "carregadas" com saldo
+- Uma das quatro contas já recebeu "autoridade" para inserir novos blocos na cadeia (de acordo com o _Proof of Authority_)
+- O arquivo _genesis.json_, que abarca todas as informações do primeiro bloco da cadeia e deve ser igual para todos os nós da rede, já foi escrito
