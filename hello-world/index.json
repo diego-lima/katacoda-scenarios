@@ -1,30 +1,38 @@
 {
   "title": "Rede privada Ethereum",
-  "description": "15Montando uma rede privada com vários nós",
+  "description": "16Montando uma rede privada com vários nós",
   "difficulty": "Intermediate",
   "time": "15 minutes",
   "details": {
     "steps": [
       {
-        "title": "Passo 1 - Observando configurações de rede",
+        "title": "Passo 1 - Instalando o Docker",
         "text": "step1.md",
         "courseData": "remove_docker.sh"
       },
       {
-        "title": "Passo 2 - Instalando o Docker",
+        "title": "Passo 2 - Rodando a imagem com o geth",
         "text": "step2.md"
       },
       {
-        "title": "Passo 3 - Rodando a imagem com o geth",
+        "title": "Passo 3 - Conectando o segundo nó",
         "text": "step3.md"
       },
       {
-        "title": "Passo 4 - Conectando o segundo nó",
+        "title": "Passo 4 - Experimentando transações",
         "text": "step4.md"
       },
       {
-        "title": "Passo 5 - Conectando-se a nós fora da mesma máquina",
+        "title": "Passo 5 - ",
         "text": "step5.md"
+      },
+      {
+        "title": "Step 6",
+        "text": "step6.md"
+      },
+      {
+        "title": "Passo 7 - Conectando-se a nós fora da mesma máquina",
+        "text": "step7.md"
       }
     ],
     "intro": {
@@ -45,7 +53,7 @@
     }
   },
   "environment": {
-    "uilayout": "terminal-terminal"
+    "uilayout": "terminal"
   },
   "backend": {
     "imageid": "ubuntu"

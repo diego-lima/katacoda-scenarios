@@ -1,11 +1,13 @@
-O primeiro passo é descobrir qual o IP que estamos rodando dentro da rede.
+Para não precisar cuidar de todas as dependências atreladas ao _geth_, que é a implementação oficial do protocolo Ethereum (na linguagem _Go_), vamos usar uma imagem Docker com tudo prontinho dentro.
 
-Para isso, executamos o comando abaixo:
+Para instalar o Docker:
 
-`export extip=$(hostname -I | cut -f1 -d ' ') && echo "seu ip interno na rede: $extip"`{{execute}}
+`apt install docker.io -y`{{execute}}
 
-_Caso você esteja usando outro sistema operacional (Windows ou MacOS), qualquer alternativa que te forneça o mesmo resultado (o seu IP dentro da rede) é suficiente._
+_Caso você esteja usando outro sistema operacional (Windows ou MacOS), qualquer alternativa que te forneça o mesmo resultado (uma instalação Docker) é suficiente._
 
-Assim, estamos armazenando na variável de ambiente `extip` o nosso ip. Isso será usado mais pra frente, porque é importante informar, na hora de rodar o cliente Ethereum, qual o IP que ele deve estar atrelado. Sem isso, outros clientes que estiverem rodando na mesma rede não poderão se conectar ao nosso cliente.
+Para verificar que a instalação foi bem sucedida, execute:
 
-E, para que possamos realmente montar uma rede de computadores participantes da mesma rede Ethereum, precisamos que todos os nós estejam conectados de alguma forma.
+`docker --version`{{execute}}
+
+Agora, com o Docker instalado, podemos baixar qualquer imagem com dependências pré-configuradas que quisermos.
